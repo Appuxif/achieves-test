@@ -26,3 +26,8 @@
 
 ## Virtual Environment Variables
 Все используемые переменные окружения указаны в файле .env.tmp.
+
+
+## Admin
+
+Доступ к админке по пути `/admin`
