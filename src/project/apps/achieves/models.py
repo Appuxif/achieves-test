@@ -1,8 +1,9 @@
 from django.contrib.auth import get_user_model
+from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 
+from project.apps.events.models import Event
 from project.core.utils.models import file_upload_to
-
 
 User = get_user_model()
 
@@ -33,4 +34,8 @@ class UserAchieve(models.Model):
     )
     created_at = models.DateTimeField(
         verbose_name="Created At", auto_now_add=True, db_index=True
+    )
+    events = GenericRelation(
+        Event,
+        related_query_name="user_achieves",
     )

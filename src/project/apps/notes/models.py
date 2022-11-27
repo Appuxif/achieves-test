@@ -1,5 +1,8 @@
 from django.contrib.auth import get_user_model
+from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
+
+from project.apps.events.models import Event
 
 User = get_user_model()
 
@@ -25,4 +28,8 @@ class Note(models.Model):
         verbose_name="Created At",
         db_index=True,
         auto_now_add=True,
+    )
+    events = GenericRelation(
+        Event,
+        related_query_name="notes",
     )
