@@ -31,3 +31,23 @@
 ## Admin
 
 Доступ к админке по пути `/admin`
+
+
+## API
+
+### Feed  
+Лента событий  
+
+GET /api/feed/
+
+Параметры:
+q `<string>` - поиск событий (по title)
+limit `<integer>` - количество элементов
+offset `<integer>` - сдвиг элементов
+user_id `<integer>` - ID пользователя
+content_type `<integer>` - тип события в ленте
+
+Пример запроса
+```
+GET /api/feed/?limit=10&offset=5&user_id=1&content_type=13&q=test
+```
