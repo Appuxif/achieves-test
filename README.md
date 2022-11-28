@@ -18,8 +18,14 @@
 * Запуск БД через докер: `sudo docker-compose up -d`
 * Установка зависимостей: `pip install -r requirements.txt`
 * Подготовка  
-  > $ python manage.py migrate
-  > $ python manage.py createsuperuser
+  > $ cd src  
+  > $ python manage.py migrate  
+  > $ python manage.py createsuperuser  
+* Можно обогатить тестовый сервер фикстурами
+  > $ python manage.py loaddata ../tests/dumps/dump.json  
+  
+  В таком случае в БД будет присутствовать администратор `login: admin, password: admin`,
+  несколько тестовых пользователей и несколько ачивок.
 * Запуск тестового сервера  
   > $ cd src  
   > $ python manage.py runserver
